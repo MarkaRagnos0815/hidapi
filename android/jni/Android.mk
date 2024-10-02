@@ -1,8 +1,14 @@
-LOCAL_PATH:= $(call my-dir)
+MY_LOCAL_PATH:= $(call my-dir)
+LOCAL_PATH := $(MY_LOCAL_PATH)
 
 HIDAPI_ROOT_REL:= ../..
 HIDAPI_ROOT_ABS:= $(LOCAL_PATH)/../..
 
+include $(LIBUSB)/android/jni/libusb.mk
+
+# hidapi
+
+LOCAL_PATH := $(MY_LOCAL_PATH)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
